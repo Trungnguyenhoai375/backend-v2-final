@@ -1,0 +1,16 @@
+name: Deploy Backend to Render
+
+on:
+  push:
+    branches:
+      - main  # Chạy khi có code mới push lên main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Render
+        run: |
+          curl $(target_url)
+        env:
+          target_url: ${{ secrets.RENDER_DEPLOY_HOOK }}
