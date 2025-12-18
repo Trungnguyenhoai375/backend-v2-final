@@ -18,5 +18,5 @@ app.delete('/api/users/:id', async (req, res) => {
     await User.findByIdAndDelete(req.params.id);
     res.json({ message: "Deleted" });
 });
-
+//kich no
 app.listen(process.env.PORT || 5000);
